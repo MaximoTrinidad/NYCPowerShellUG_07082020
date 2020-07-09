@@ -1,0 +1,53 @@
+** Demo WSL
+
+Prod - WSL1 DOS / WinExplorer / Docker Desktop error / Network Difference
+QA Network - WS2 DOS / WinExplorer / Network Difference
+
+
+** Demo Docker - SAPIEN01
+
+PrimalScript open scripts from file browser
+Show Added WSL console
+Open Pwsh
+Run basic Docker commands in WSL/PowerShell
+
+
+** Tehcnologies At Play - QA Network
+
+Windows Terminal:  
+- Setting JSON
+- Ubuntu 18.04:
+  Alt-Shift-D - Open consoles within the session.
+  Ctrl-Shift-W - Closes consoles within the session.
+  Ctrl-Shift-D - Open new console.
+
+- Connect to Network Drive:
+  sudo mkdir /mnt/z
+  sudo mount -t drvfs Z: /mnt/z
+
+- jupyter lab, Open Browser and Notebook files.
+
+On SAPIEN01:
+- Docker Compose Sample 
+
+version: '3.8'
+services:
+  ms-sql:
+    image: 'mcr.microsoft.com/mssql/server:2019-latest'
+    container_name: sql2k19_01_qa01
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=qaSqlPwd01A
+      - TZ=America/New_York
+      - MSSQL_PID=Developer
+    ports:
+      - '1435:1435'
+
+- Bonus: SQL query container
+
+
+
+
+
+
+
