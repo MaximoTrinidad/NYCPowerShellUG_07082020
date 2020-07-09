@@ -17,6 +17,6 @@ Check out this session if you're interested in learning how easy it is to use Do
 
 # Demo scripts:
 Includes step-by-step in how-to customized and created a new SQL Server 2019 Docker Image.
-Bonus material includes.
+Bonus material included.
 
 Please, this is For-Education-Only. Don't use in Production!
