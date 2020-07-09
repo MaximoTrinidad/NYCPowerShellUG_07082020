@@ -7,13 +7,13 @@ MeetUp Link: https://www.meetup.com/NycPowershellMeetup
 Check out this session if you're interested in learning how easy it is to use Docker Containers in Windows 10. We'll be looking at the different Technologies available within Windows: DOS, PowerShell, and WSL (Subsystem in Linux) in its basic form making it easy to work. Learn how to update, save, and reload a Docker Containers. See how to install tools such as PowerShell, Net tools, vim, and Anaconda in your docker container when necessary. Best of all, use your own tool and how to get things documented.
 
 # Technologies At Play:
-1. Windows 10 WSL 2
-2. Docker Container / Docker Compose
-3. SQL Server 2019 Docker Image
-2. PowerShell/DOS/Python
-3. Anaconda Jupyter Lab
-4. .NET Interactive PowerShell Notebook
-5. Windows Terminal
+1. Windows 10 Version 2004 -> WSL 2 Ubuntu 18.04
+2. Docker CLI / Docker Compose
+3. SQL Server 2019 Docker Container Image
+4. Windows Terminal: PowerShell/DOS/Python/Ubuntu
+5. Anaconda Jupyter Lab
+6. .NET Interactive PowerShell Notebook
+7. Editors: PrimalScript, and PowerShell Studio.
 
 # Demo scripts:
 Includes step-by-step in how-to customized and created a new SQL Server 2019 Docker Image.
