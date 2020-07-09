@@ -1,3 +1,7 @@
+Try the Jupyter Interactive Notebooks in MyBinder. No installs needed.
+
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/dfinke/NYCPowerShellUG_07082020/master)
+
 # NYCPowerShellUG_07082020
 Here's both PowerPoint and Demo scripts use during New York City PowerShell MeetUp on July 8th, 2020 at 6:30 PM. 
 Thanks to the organizer: Doug Finke (MVP) for having me at the meetup.
