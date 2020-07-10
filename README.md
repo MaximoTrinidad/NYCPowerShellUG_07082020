@@ -1,6 +1,6 @@
 Try the Jupyter Interactive Notebooks in MyBinder. No installs needed.
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://github.com/MaximoTrinidad/NYCPowerShellUG_07082020/tree/master/notebooks/WSL2-DockerNotebook_01.ipynb)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://github.com/MaximoTrinidad/NYCPowerShellUG_07082020/tree/master)
 
 # NYCPowerShellUG_07082020
 Here's both PowerPoint and Demo scripts use during New York City PowerShell MeetUp on July 8th, 2020 at 6:30 PM. 
