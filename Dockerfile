@@ -88,7 +88,7 @@ WORKDIR ${HOME}/notebooks/
 USER root
 RUN apt-get update 
 
-RUN apt-get install \
+RUN apt-get -y install \
     apt-transport-https \
     ca-certificates \
     curl \
@@ -104,7 +104,7 @@ RUN add-apt-repository \
    
 RUN apt-get update
 
-RUN apt-get install docker-ce docker-ce-cli containerd.io
+RUN apt-get install -y docker-ce docker-ce-cli containerd.io
 
 RUN apt-get update 
 
