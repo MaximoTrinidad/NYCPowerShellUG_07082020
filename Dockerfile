@@ -90,7 +90,7 @@ WORKDIR ${HOME}/notebooks/
 
 ## -> Going wild! Changing sudoers:
 USER root
-cp /etc/sudoers ~/sudoers.bak
+#cp /etc/sudoers ~/sudoers.bak
 ${USER} ALL=(ALL) NOPASSWD:ALL >> /etc/sudoers
 #USER root
 RUN apt-get update \
