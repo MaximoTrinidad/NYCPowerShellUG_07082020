@@ -88,7 +88,11 @@ WORKDIR ${HOME}/notebooks/
 # -- Added step to include Docker inside the container for Binder use:
 # -> MT 07/13/2020
 
+## -> Going wild! Changing sudoers:
 USER root
+cp /etc/sudoers ~/sudoers.bak
+${USER} ALL=(ALL) NOPASSWD:ALL >> /etc/sudoers
+#USER root
 RUN apt-get update \
     && apt-get -y install \
     apt-transport-https \
