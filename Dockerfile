@@ -84,7 +84,10 @@ ENV DOTNET_TRY_CLI_TELEMETRY_OPTOUT=false
 # Set root to notebooks
 WORKDIR ${HOME}/notebooks/
 
-# MT 07/13/2020 - Added step to include Docker inside the container for Binder use:
+# -> DOCKER Container Section:
+# -- Added step to include Docker inside the container for Binder use:
+# -> MT 07/13/2020
+
 USER root
 RUN apt-get update \
     && apt-get -y install \
@@ -93,22 +96,13 @@ RUN apt-get update \
     curl \
     gnupg-agent \
     software-properties-common
-
-USER ${USER}
 RUN curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-
-USER root
 RUN add-apt-repository \
    "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
    $(lsb_release -cs) \
-   stable"
-   
-USER root
+   stable" 
 RUN apt-get update
 RUN apt-get install -y docker-ce docker-ce-cli containerd.io
-
 #RUN apt-get update 
-
 #RUN service docker start
-
-RUN service docker status
+#RUN service docker status
