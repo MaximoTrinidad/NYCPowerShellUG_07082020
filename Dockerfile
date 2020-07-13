@@ -85,7 +85,7 @@ ENV DOTNET_TRY_CLI_TELEMETRY_OPTOUT=false
 WORKDIR ${HOME}/notebooks/
 
 # MT 07/13/2020 - Added step to include Docker inside the container for Binder use:
-RUN apt-get update && apt -y upgrade
+RUN apt-get update
 
 RUN apt-get install \
     apt-transport-https \
@@ -105,7 +105,7 @@ RUN apt-get update
 
 RUN apt-get install docker-ce docker-ce-cli containerd.io
 
-RUN apt-get update && apt -y upgrade
+RUN apt-get update 
 
 RUN service docker start
 
