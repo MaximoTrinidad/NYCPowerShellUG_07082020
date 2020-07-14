@@ -91,11 +91,12 @@ WORKDIR ${HOME}/notebooks/
 USER root
 ## -> Going wild! Try changing sudoers:
 #cp /etc/sudoers ~/sudoers.bak
-#RUN apt-get update \
-# && apt-get install -y sudo
-#RUN adduser --disabled-password --gecos '' jovyan
-#RUN adduser jovyan sudo
+RUN apt-get update \
+ && apt-get install -y sudo
+RUN adduser --disabled-password --gecos '' jovyan
+RUN adduser jovyan sudo
 #RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
+RUN echo 'jovyan ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 RUN groupadd docker
 RUN usermod -aG docker jovyan
 ## -> Continue after suder update:
