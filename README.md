@@ -24,3 +24,6 @@ Includes step-by-step in how-to customized and created a new SQL Server 2019 Doc
 Bonus material included.
 
 Please, this is For-Education-Only. Don't use in Production!
+
+# Recorded video available:
+SAPIEN YouTube Channel, video "Working with Docker Containers in Windows 10": https://youtu.be/_r3dKTm6cZ4
