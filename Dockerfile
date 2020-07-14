@@ -117,9 +117,9 @@ RUN add-apt-repository \
 RUN apt-get update
 RUN apt-get install -y docker-ce docker-ce-cli containerd.io
 ## - Add fix for docker.sock:> "permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock"
-#RUN chown root:docker /var/run/docker.sock
-#RUN chown "{$USER}":"{$USER}" /home/"{$USER}"/.docker -R
-#RUN chmod g+rwx "{$HOME}/.docker" -R
+RUN chown docker:docker /var/run/docker.sock
+RUN chown -R "{$USER}":"{$USER}" /home/"{$USER}"/.docker 
+RUN chmod _R g+rwx "{$HOME}/.docker" 
 ##-
 #RUN apt-get update 
 #RUN service docker start
