@@ -98,7 +98,7 @@ RUN adduser jovyan sudo
 #RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 RUN echo 'jovyan ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 RUN groupadd docker
-RUN usermod -aG docker jovyan
+RUN usermod -a -G docker jovyan
 ## - SUDO fix for error: "sudo: setrlimit(RLIMIT_CORE): Operation not permitted"
 RUN echo "Set disable_coredump false" >> /etc/sudo.conf
 ## -> Continue after sudoer update:
