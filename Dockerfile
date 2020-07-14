@@ -108,7 +108,9 @@ RUN apt-get update \
     ca-certificates \
     curl \
     gnupg-agent \
-    software-properties-common
+    software-properties-common \
+    lxc \
+    iptables
 RUN curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 RUN add-apt-repository \
    "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
@@ -116,6 +118,7 @@ RUN add-apt-repository \
    stable" 
 RUN apt-get update
 RUN apt-get install -y docker-ce docker-ce-cli containerd.io
+RUN apt-get update
 ## - Add fix for docker.sock:> "permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock"
 #RUN chown jovyan:docker /var/run/docker.sock
 #RUN chown -R "{$USER}":"{$USER}" /home/"{$USER}"/.docker 
