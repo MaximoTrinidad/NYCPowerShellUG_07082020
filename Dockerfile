@@ -96,6 +96,7 @@ USER root
 #RUN adduser --disabled-password --gecos '' jovyan
 #RUN adduser jovyan sudo
 #RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
+RUN usermod -aG docker jovyan
 ## -> Continue after suder update:
 RUN apt-get update \
     && apt-get -y install \
