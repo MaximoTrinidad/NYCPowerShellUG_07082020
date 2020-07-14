@@ -99,7 +99,9 @@ RUN adduser jovyan sudo
 RUN echo 'jovyan ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 RUN groupadd docker
 RUN usermod -aG docker jovyan
-## -> Continue after suder update:
+## - SUDO fix for error: "sudo: setrlimit(RLIMIT_CORE): Operation not permitted"
+RUN echo "Set disable_coredump false" >> /etc/sudo.conf
+## -> Continue after sudoer update:
 RUN apt-get update \
     && apt-get -y install \
     apt-transport-https \
