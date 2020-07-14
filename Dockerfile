@@ -91,11 +91,11 @@ WORKDIR ${HOME}/notebooks/
 USER root
 ## -> Going wild! Try changing sudoers:
 #cp /etc/sudoers ~/sudoers.bak
-RUN apt-get update \
- && apt-get install -y sudo
-RUN adduser --disabled-password --gecos '' jovyan
-RUN adduser jovyan sudo
-RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
+#RUN apt-get update \
+# && apt-get install -y sudo
+#RUN adduser --disabled-password --gecos '' jovyan
+#RUN adduser jovyan sudo
+#RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 ## -> Continue after suder update:
 RUN apt-get update \
     && apt-get -y install \
