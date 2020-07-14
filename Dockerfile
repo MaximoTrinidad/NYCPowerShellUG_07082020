@@ -88,11 +88,15 @@ WORKDIR ${HOME}/notebooks/
 # -- Added step to include Docker inside the container for Binder use:
 # -> MT 07/13/2020
 
-## -> Going wild! Changing sudoers:
 USER root
+## -> Going wild! Try changing sudoers:
 #cp /etc/sudoers ~/sudoers.bak
-${USER} ALL=(ALL) NOPASSWD:ALL >> /etc/sudoers
-#USER root
+RUN apt-get update \
+ && apt-get install -y sudo
+RUN adduser --disabled-password --gecos '' jovyan
+RUN adduser jovyan sudo
+RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
+## -> Continue after suder update:
 RUN apt-get update \
     && apt-get -y install \
     apt-transport-https \
