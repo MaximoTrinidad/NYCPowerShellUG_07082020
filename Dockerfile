@@ -93,7 +93,7 @@ USER root
 #cp /etc/sudoers ~/sudoers.bak
 RUN apt-get update \
  && apt-get install -y sudo
-RUN adduser --disabled-password --gecos '' jovyan
+#Already exist: RUN adduser --disabled-password --gecos '' jovyan
 RUN adduser jovyan sudo
 #RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 RUN echo 'jovyan ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
