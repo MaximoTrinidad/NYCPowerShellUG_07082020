@@ -93,14 +93,6 @@ USER root
 #cp /etc/sudoers ~/sudoers.bak
 RUN apt-get update \
  && apt-get install -y sudo
-#Already exist: RUN adduser --disabled-password --gecos '' jovyan
-RUN adduser jovyan sudo
-#RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
-RUN echo 'jovyan ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
-RUN groupadd docker
-RUN usermod -a -G docker jovyan
-## - SUDO fix for error: "sudo: setrlimit(RLIMIT_CORE): Operation not permitted"
-RUN echo "Set disable_coredump false" >> /etc/sudo.conf
 ## -> Continue after sudoer update:
 RUN apt-get update \
     && apt-get -y install \
@@ -120,10 +112,20 @@ RUN add-apt-repository \
 RUN apt-get update
 RUN apt-get install -y docker-ce docker-ce-cli containerd.io
 RUN apt-get update
+#Already exist: RUN adduser --disabled-password --gecos '' jovyan
+RUN adduser jovyan sudo
+#RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
+RUN echo 'jovyan ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
+RUN groupadd docker
+RUN usermod -a -G docker jovyan
+RUN newgrp docker
+## - SUDO fix for error: "sudo: setrlimit(RLIMIT_CORE): Operation not permitted"
+RUN echo "Set disable_coredump false" >> /etc/sudo.conf
+RUN systemctl enable docker
 ## - Add fix for docker.sock:> "permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock"
 #RUN chown jovyan:docker /var/run/docker.sock
 #RUN chown -R "{$USER}":"{$USER}" /home/"{$USER}"/.docker 
-#RUN chmod _R g+rwx "{$HOME}/.docker" 
+#RUN chmod -R g+rwx "{$HOME}/.docker" 
 ##-
 #RUN apt-get update 
 #RUN service docker start
