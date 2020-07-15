@@ -116,7 +116,7 @@ RUN apt-get update
 RUN adduser jovyan sudo
 #RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 RUN echo 'jovyan ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
-RUN groupadd docker
+#RUN groupadd docker
 RUN usermod -a -G docker jovyan
 RUN newgrp docker
 ## - SUDO fix for error: "sudo: setrlimit(RLIMIT_CORE): Operation not permitted"
